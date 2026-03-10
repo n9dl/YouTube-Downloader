@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>YouTube Downloader</title>
+</head>
+<body>
+
+<section class="main">
+    <div class="content">
+        <h2>YouTube Downloader</h2>
+        <p>Developed by Yazan Al-Qahtani</p>
+
+        <div class="url-box">
+            <form id="downloadForm">
+                <input type="url" id="videoUrl" placeholder="Enter YouTube URL" required>
+                
+                <select id="videoQuality">
+                    <option value="best">Best Quality (1080p+ Video & Audio)</option>
+                    <option value="low">Low Quality (Fast)</option>
+                    <option value="audio">Audio Only (MP3)</option>
+                </select>
+
+                <button type="submit" id="submitBtn">Download</button>
+            </form>
+        </div>
+
+        <div id="loading" style="display: none; margin-top: 20px; color: #F1F1F1;">
+            <p>Processing & Merging... Please wait ⏳</p>
+        </div>
+
+        <div id="result" style="display: none; margin-top: 30px;">
+            <p id="videoTitle" style="color: #F1F1F1; font-size: 16px; margin-bottom: 15px;"></p>
+            <a id="downloadLink" href="#" style="background-color: #FF0000; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Save to PC</a>
+        </div>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
